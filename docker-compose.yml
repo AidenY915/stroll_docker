@@ -1,14 +1,14 @@
 services:
-  stroll_tomcat:
+  tomcat:
     image: stroll_tomcat
     ports:
       - "8080:8080"
     networks:
       - stroll-net
     depends_on:
-      - stroll_mysql
+      - mysql
 
-  stroll_mysql:
+  mysql:
     image: stroll_mysql
     networks:
       - stroll-net
