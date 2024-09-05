@@ -2,7 +2,7 @@ services:
   tomcat:
     image: stroll_tomcat
     ports:
-      - "8080:8080"
+      - "8081:8080"
     networks:
       - stroll-net
     depends_on:
@@ -12,6 +12,8 @@ services:
     image: stroll_mysql
     networks:
       - stroll-net
+    volumes: # /home/aiden/mysql가 빈 폴더이어야 함, 없으면 Docker가 생성
+      - /home/aiden/mysql:/var/lib/mysql
 
 networks:
   stroll-net:

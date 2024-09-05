@@ -38,7 +38,7 @@ CREATE TABLE reply(
     CONSTRAINT fk_reply_place_no FOREIGN KEY (placeNo) REFERENCES place(no) ON DELETE CASCADE
 );
 CREATE INDEX ix_reply_placeNo ON reply(placeNo);
-
+DROP TABLE IF EXISTS wish;
 CREATE TABLE wish(
 	no INT PRIMARY KEY AUTO_INCREMENT,
     userId CHAR(20) NOT NULL,
